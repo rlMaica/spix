@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>SPIX - Share your Pixel</title>
+
+		<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/style.css">
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/javascripts/angular.min.js"></script>
+		<script type="text/javascript" src="/javascripts/underscore.min.js"></script>
+		<script type="text/javascript" src="/javascripts/qrcode.min.js"></script>
+
+		<script type="text/javascript" src="/angular/mainController.ctrl.js"></script>
+		<script type="text/javascript" src="/angular/app.js"></script>
+	</head>
+
+	<body data-ng-app="app">
+		<input type="hidden" id="key" name="key" value="<%= key %>">
+
+		<div data-ng-controller="MainControllerCtrl" data-ng-init="init()">
+			<h1 class="spix-title">SPIX</h1>
+			<div id="qrcode" data-ng-show="showQrCode" style="overflow: hidden; width: 300px; height: 300px;"></div>
+			<div data-ng-show="showPhoto">
+				<img ng-src="{{selectedPhoto}}"/>
+				<!--<figure id="figure">-->
+					<!--<img data-ng-repeat="data in album" ng-src="{{data.image}}"/>-->
+				<!--</figure>-->
+			</div>
+		</div>
+	</body>
+</html>
